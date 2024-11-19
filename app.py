@@ -8,4 +8,12 @@ def index():
         {"name": "oranges", "quantity": 2},
         {"name": "strawberries", "quantity": 6}
     ]
+    fruits = checkFruits(fruits)
     return render_template("index.html", fruits=fruits)
+
+def checkFruits(fruits):
+    newFruits = []
+    for fruit in fruits:
+        if "o" in fruit["name"].lower() or fruit["quantity"] > 3:
+            newFruits.append(fruit)
+    return newFruits
