@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import keys
 
 app = Flask(__name__)
 @app.route("/")
@@ -9,7 +10,8 @@ def index():
         {"name": "strawberries", "quantity": 6}
     ]
     fruits = checkFruits(fruits)
-    return render_template("index.html", fruits=fruits)
+    return render_template("index.html", fruits=fruits, key_1 = keys.MY_SECRET_API_KEY_1,
+                           key_2 = keys.MY_SECRET_API_KEY_2)
 
 def checkFruits(fruits):
     newFruits = []
