@@ -1,3 +1,6 @@
+# API keys will be stored here
+keys.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
